@@ -1,0 +1,9 @@
+#main{
+    background-color: lightskyblue;
+    border: 10px solid black;
+    display: flex;
+    justify-content: center;
+}
+.headers{
+    text-align: center;
+}
