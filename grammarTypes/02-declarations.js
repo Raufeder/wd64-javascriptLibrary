@@ -13,7 +13,7 @@ let a = 2;
 - let: is our KEYWORD
 - a: is our NAME of our variable
 - =: is our ASSIGNMENT OPERATOR
-- 2: is our variable VALUE
+- 2: is our variable VALUE!
 */
 
 let b = 1;
