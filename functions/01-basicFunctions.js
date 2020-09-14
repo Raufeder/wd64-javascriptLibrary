@@ -49,7 +49,7 @@ first();
 //console.log(first);
 
 //? Anonymous Function
-// Anonymous Functions are stored in memory but the runtime doesnt automatically create a reference to it
+// Anonymous Functions are stored in memory but the runtime doesnt automatically create a reference to it!
 
 let anon = function() {
     console.log('anon function')
