@@ -209,13 +209,42 @@ switch(instructor){
     case 'Eric' :
     case 'Zach' :
     case 'Donovan' :
-        console.log(`${Instructor} is a part of the Web Dev Team.`);
+        console.log(`${instructor} is a part of the Web Dev Team.`);
         break;
     case 'Josh' :
     case 'Amanda' :
     case 'Casey' :
-        console.log(`${Instructor} is a part of the Software Dev Team.`);
+        console.log(`${instructor} is a part of the Software Dev Team.`);
         break;
     default:
-        console.log(`Sorry, I can't find what ${Instructor} teaches.`);
+        console.log(`Sorry, I can't find what ${instructor} teaches.`);
 }
+
+//! Challenge 2: Take Home Challenge
+/*  
+Create a switch statement that takes in a value (number) that represents a grade.  If it is True, console log that they are passing with the correct letter grade.
+*   A: 89-100
+*   B: 79-88
+*   C: 66-78
+*   D: 59-65
+*   F: 0-59
+*/
+
+grade = 92;
+
+    switch(true) {
+        case grade >= 90:
+            console.log('A');
+            break;
+        case grade >= 80:
+            console.log('B');
+            break;
+        case grade >= 70:
+            console.log('C');
+            break;
+        case grade >= 60:
+            console.log('D');
+            break;
+        default:
+            console.log('F');
+    }
