@@ -6,7 +6,7 @@
         -creating several different objects with the same keys but different values
 */
 
-//ORTION 1:
+//OPTION 1:
 let person1 = {
     name: 'Macy',
     age: 24,

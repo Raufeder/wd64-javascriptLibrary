@@ -110,15 +110,6 @@ baking['zucchini'] = 'better make some bread';
 console.log(baking);
 // We have the ability to set NEW key/value pairs using square brackets
 
-let garden = {
-    vegatable: 'zucchini',
-    flower: 'sun flower',
-    fruit: 'grape',
-    water: true,
-    sun: true,
-    size: 10
-};
-
 console.log(baking[garden['vegatable']]); // here we are saying the same thing as we did above, except we are passing information from our object. garden[vegatable] is the same as 'zucchini' above
 
 let testObj = {
