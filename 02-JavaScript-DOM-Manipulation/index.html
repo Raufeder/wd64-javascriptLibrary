@@ -7,30 +7,9 @@
 </head>
 <body>
     <!--All of our HTML code will go here -->
-<p id="testParagraph">sample text</p>
-<p class="sampleClass">This paragraph has a class of 'sampleClass'</p>
-
-<script type="text/javascript">
-    /* All of our JavaScript code will go here */
-    console.log(document.querySelectorAll("p.sampleClass"));
-
-</script>
-</body>
-</html>
-
-<!--All of our HTML code will go here -->
-<p id="testParagraph">sample text</p>
-<p class="sampleClass">This paragraph has a class of 'sampleClass'</p>
-
-<script type="text/javascript">
-    /* All of our JavaScript code will go here */
-    console.log(document.querySelectorAll("p.sampleClass"));
-
-</script>
-
-<!-- All of our HTML code will go here -->
 <h1>Hello World</h1>
 <p id="testParagraph">sample text</p>
+<p class="sampleClass">This paragraph has a class of 'sampleClass'</p>
 
 <script type="text/javascript">
     /* All of our JavaScript code will go here */
@@ -38,4 +17,10 @@
     console.log(x);
     document.getElementById('testParagraph').style.color = 'blue';
     console.log(document.getElementById('testParagraph').style.color);
+    console.log(document.querySelectorAll("p.sampleClass"));
+    document.querySelectorAll("p.sampleClass")[0].innerText = "My text was changed!";
+    document.querySelectorAll("p.sampleClass")[0].innerHTML = "<span>I am a whole new element!</span>";
 </script>
+</body>
+</html>
+
