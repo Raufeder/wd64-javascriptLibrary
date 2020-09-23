@@ -1,5 +1,5 @@
 const baseURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json'; 
-const key = '7OwGc4jmCreQPB6C'; 
+const key = 'l22Tk6JaSwNOxqtSaQjqrKvnno7A9Q13'; 
 let url; 
 
 //SEARCH FORM
@@ -25,7 +25,7 @@ nextBtn.addEventListener('click', nextPage);
 previousBtn.addEventListener('click', previousPage); 
 
 function fetchResults(e) {
-  console.log(e); //2
+  console.log(e);
   // Assemble the full URL
   url = baseURL + '?api-key=' + key + '&page=' + pageNumber + '&q=' + searchTerm.value; 
   console.log(url); 
@@ -51,8 +51,7 @@ function fetchResults(e) {
     if(endDate.value !== '') {
       url += '&end_date=' + endDate.value;
     };
-
-     
+  
     fetch(url).then(function(result) {
         return result.json(); 
     }).then(function(json) {
@@ -86,8 +85,6 @@ function displayResults(json) {
         let img = document.createElement('img');
         let para = document.createElement('p');   
         let clearfix = document.createElement('div'); 
-      }
-    }
 
         let current = articles[i]; 
         console.log("Current:", current); 
@@ -116,21 +113,23 @@ function displayResults(json) {
         article.appendChild(para);
         article.appendChild(clearfix);
         section.appendChild(article);
+      }
+    }
 };
 
-function nextPage(e) {
-    pageNumber++;
+  function nextPage(e) {
+    pageNumber++; 
     fetchResults(e);  
     console.log("Page number:", pageNumber); 
-};
+ };
 
 function previousPage(e) {
-    if(pageNumber > 0) { 
-      pageNumber--; 
+    if(pageNumber > 0) { //1
+      pageNumber--; //2
     } else {
-      return; 
+      return; //3
     }
-    fetchResults(e); 
-    console.log("Page:", pageNumber); 
+    fetchResults(e); //4
+    console.log("Page:", pageNumber); //5
   
 };
