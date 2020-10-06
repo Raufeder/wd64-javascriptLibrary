@@ -1,6 +1,6 @@
 const baseURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json'; 
 const key = 'l22Tk6JaSwNOxqtSaQjqrKvnno7A9Q13'; 
-let url; 
+let url;
 
 //SEARCH FORM
 const searchTerm = document.querySelector('.search');
@@ -26,13 +26,6 @@ let displayNav = false;
 searchForm.addEventListener('submit', fetchResults); 
 nextBtn.addEventListener('click', nextPage); 
 previousBtn.addEventListener('click', previousPage); 
-
-function fetchResults(e) {
-  console.log(e);
-  // Assemble the full URL
-  url = baseURL + '?api-key=' + key + '&page=' + pageNumber + '&q=' + searchTerm.value; 
-  console.log(url); 
-}
 
 function nextPage(){
   console.log("Next button clicked");

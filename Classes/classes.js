@@ -3,11 +3,11 @@
 ! CLASSES
 *  **********
     -Classes can be defined by either expression or declaration
-    -Classes are fucntions
+    -Classes are functions
     -Classes act as a blueprint for creating objects
         -ex: modelcould be a property of a class of automobile. Each new automobile we create that's a copy of our original classand could be a different valuefor the property model
     -Body of class is between{}
-    -Constructor method is a special methodfor creating and initializing and object that was created with a class
+    -Constructor method is a special method for creating and initializing an object that was created with a class
         -There can only be ONE constructor method
         -Can use the keywordm "super"
         -The super keyword is used to access and call functionson on an object parent
