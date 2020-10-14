@@ -49,7 +49,7 @@ let Vehicle = class{
     this.model = model;
     }
 };
-console.log(vehicle.name);
+console.log(Vehicle.name);
 
 //*named
 let Auto = class Mobile{
@@ -58,7 +58,7 @@ let Auto = class Mobile{
         this.model = model;
         }
 };
-console.log(auto.name);
+console.log(Auto.name);
 
 /* 
 *  ***********
@@ -185,3 +185,4 @@ let Fido = new dog('Fido', 'mutt');
 Fido.eat();
 Fido.play();
 // Animal.play(); -breaks, cant access play in dog
+method

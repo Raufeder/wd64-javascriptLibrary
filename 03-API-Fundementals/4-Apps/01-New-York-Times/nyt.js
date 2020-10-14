@@ -1,6 +1,6 @@
 const baseURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json'; 
 const key = 'l22Tk6JaSwNOxqtSaQjqrKvnno7A9Q13'; 
-let url;
+let url; 
 
 //SEARCH FORM
 const searchTerm = document.querySelector('.search');
@@ -26,6 +26,13 @@ let displayNav = false;
 searchForm.addEventListener('submit', fetchResults); 
 nextBtn.addEventListener('click', nextPage); 
 previousBtn.addEventListener('click', previousPage); 
+
+function fetchResults(e) {
+  console.log(e);
+  // Assemble the full URL
+  url = baseURL + '?api-key=' + key + '&page=' + pageNumber + '&q=' + searchTerm.value; 
+  console.log(url); 
+}
 
 function nextPage(){
   console.log("Next button clicked");
@@ -60,21 +67,21 @@ function displayResults(json) {
     }
     let articles = json.response.docs;
 
-    if(pageNumber === 0) {
-        previousBtn.style.display = 'none';
-        nextBtn.style.display = 'block';
-        nav.style.display = 'block'; //shows the nav display if 10 items are in the array
-    } else if(pageNumber > 0 && articles.length === 10) { // bonus challenge
-        previousBtn.style.display = 'block';
-        nextBtn.style.display = 'block';
-        nav.style.display = 'block';
-    } else if(pageNumber > 0 && articles.length <= 10) {
-        previousBtn.style.display = 'block';
-        nav.style.display = 'block';
-        nextBtn.style.display = 'none';
-    } else {
-        nav.style.display = 'block'; // hides the nav display if tless than 10 times are in the
-    }
+    // if(pageNumber === 0) {
+    //     previousBtn.style.display = 'none';
+    //     nextBtn.style.display = 'block';
+    //     nav.style.display = 'block'; //shows the nav display if 10 items are in the array
+    // } else if(pageNumber > 0 && articles.length === 10) { // bonus challenge
+    //     previousBtn.style.display = 'block';
+    //     nextBtn.style.display = 'block';
+    //     nav.style.display = 'block';
+    // } else if(pageNumber > 0 && articles.length <= 10) {
+    //     previousBtn.style.display = 'block';
+    //     nav.style.display = 'block';
+    //     nextBtn.style.display = 'none';
+    // } else {
+    //     nav.style.display = 'block'; // hides the nav display if tless than 10 times are in the
+    // }
 
     if(articles.length === 10) {
         nav.style.display = 'block'; 

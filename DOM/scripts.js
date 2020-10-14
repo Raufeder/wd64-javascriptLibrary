@@ -1,6 +1,6 @@
 let x = 10;
 console.log(x);
-
+event
 //! 1: getElementById
 
 console.dir(document);
