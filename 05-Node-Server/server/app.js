@@ -1,15 +1,30 @@
+require('dotenv').config();
+
 let express = require('express');
 let app = express();
 let test = require('./controllers/testcontroller')
-
+let authTest = require('./controllers/authtestcontroller')
+let user = require('./controllers/usercontroller')
 let sequelize = require('./db');
 
-sequelize.sync();
+sequelize.sync(); //tip: {force: true} for resetting tables
+app.use(express.json());
+app.use(require('./middleware/headers'));
+/*****************
+ * EXPOSED ROUTES
+******************/
+app.use('/test', test);
+app.use('/api/user', user);
 
-app.use('/test', test)
+/*****************
+ * PROTECTED ROUTES
+******************/
+
+app.use(require('./middleware/validate-session'));
+app.use('/authtest', authTest);
 
 app.listen(4000, function(){
-    console.log('Hey man!!!');
+    console.log('App is listening on 4000.');
 });
 
 app.use('/api/test', function(req, res){

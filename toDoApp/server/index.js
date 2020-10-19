@@ -1,6 +1,14 @@
 const Express = require('express');
 
+const applicationSequelizeObject = require('./db');
+const applicationControllers = require("./controllers/index");
+
 const expressApplicationObject = new Express();
+
+expressApplicationObject.use(Express.json());
+
+expressApplicationObject.use("/test", applicationControllers.test);
+expressApplicationObject.use("/users", applicationControllers.users);
 
 expressApplicationObject.get('/', (request, response) => {
     console.log('[server]: Root GET request recieved');
@@ -10,15 +18,36 @@ expressApplicationObject.get('/', (request, response) => {
     response.send('Root Route Hit, hello from the todo server');
 });
 
-expressApplicationObject.use(Express.json());
-expressApplicationObject.post('/challenge', (request, response) => {
-    let data = request.body;
-    let message = data.age >= 18 ? `${data.name}, you are an adult!` : `${data.name}, you will be an adult soon!`;
+// expressApplicationObject.post('/challenge', (request, response) => {
+//     let data = request.body;
+//     let message = 
+//         data.age >= 18 
+//             ? `${data.name}, you are an adult!` 
+//             : `${data.name}, you will be an adult soon!`;
 
-    response.send(message);
-});
+//     response.send(message);
+// });
 
-expressApplicationObject.listen(9001, () => {
-    console.log('[server]: App is listening on port 9001');
-});
+
+
+
+
+// Startup Procedure:
+// Verify the connection to the postgres DB
+// Synchronize our Database with our models
+// Listen on our specified port
+
+applicationSequelizeObject
+    .authenticate()
+    .then(() => applicationSequelizeObject.sync())
+    .then(() => {
+        expressApplicationObject.listen(9001, () => {
+            console.log('[server]: App is listening on port 9001');
+        });
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+
+
 
