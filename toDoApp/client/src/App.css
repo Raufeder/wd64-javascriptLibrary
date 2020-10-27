@@ -1,0 +1,13 @@
+/* #wrapper {
+    max-width: 400px;
+    margin: auto;
+} */
+
+/* PLAY WITH CSS HERE */
+
+.authForm {
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    border-top: 8px solid #6C757D;
+}

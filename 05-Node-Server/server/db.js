@@ -1,11 +1,11 @@
 const Sequelize = require('sequelize');
 
-const sequalize = new Sequelize('workoutlog', 'postgres', 'Letmeow1234!', {
+const sequelize = new Sequelize('workoutlog', 'postgres', 'Letmeow1234!', {
     host: 'localhost',
     dialect: 'postgres'
 });
 
-sequalize.authenticate().then(
+sequelize.authenticate().then(
     function() {
         console.log('Connected to workoutlog postgres database');
     },
@@ -14,4 +14,4 @@ sequalize.authenticate().then(
     }
 );
 
-module.exports = sequalize;
+module.exports = sequelize;

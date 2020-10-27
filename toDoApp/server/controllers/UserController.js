@@ -12,7 +12,7 @@ userController.post('/register', async (req, res) => {
   try {
     await User.create({
       email,
-      password: bcrypt.hashSync(password, 12)
+      password: bcrypt.hashSync(password, 12)  
     });
     res.status(201).json({
       message: 'User registered!'
